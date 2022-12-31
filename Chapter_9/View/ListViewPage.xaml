@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter_9.View.ListViewPage"
+             xmlns:local="Chapter_9.View"
+
+             Title="ListViewPage">
+     
+    <VerticalStackLayout>
+        <Label 
+            Text="Test MVVM By List view"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <ListView x:Name="lsv" ItemTapped="lsv_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="Item Number"
+                              Detail="{Binding Number, StringFormat='Code in system :{0:t}'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Line BackgroundColor="Yellow"></Line>
+        <Label Text="User data by dependency injection..."></Label>
+        <ListView x:Name="usersListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding UserName}"
+                              Detail="{Binding UserDetails}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Line BackgroundColor="White"></Line>
+        <Label Text="Department data by dependency injection extention..."></Label>
+        <ListView x:Name="departmentListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding DepartmentName}"
+                              Detail="{Binding DepartmentCode}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label x:Name="Test_DI" Text="{Binding strMP}"></Label>
+    </VerticalStackLayout>
+</ContentPage>

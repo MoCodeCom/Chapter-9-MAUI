@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Chapter_9.Model.Data"
+             x:Class="Chapter_9.MainPage"
+             
+             >
+    <ContentPage.Resources>
+        <model:ProductsData x:Key="productData"/>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="Test INotification Chapter 9"></Label>
+            <StackLayout BindingContext="{Binding Source={StaticResource productData}}">
+                <Label Text="Name"></Label>
+                <Entry x:Name="Entry1" Text="{Binding Name}"></Entry>
+                <Label Text="Number"></Label>
+                <Entry x:Name="Entry2" Text="{Binding Number}"></Entry>
+                
+                
+                <Label x:Name="label1" Text="{Binding Name}"></Label>
+            </StackLayout>
+
+            <Button x:Name="listBtn" Text="List in MVVM" Clicked="list_Clicked"></Button>
+
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

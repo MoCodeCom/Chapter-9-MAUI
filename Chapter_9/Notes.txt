@@ -1,0 +1,9 @@
+﻿Notes:
+- there are more than one way to implements INotifyChanges in MVVM pattren.
+- ONE: by us this Interface in Model data class for all data structure.
+- TWO: throw us this Interface just with the Editable data in View data (mvVm)
+- In the way TWO we will use data of three possible options:
+  delete and add OR edit
+  so, treated data that delete and add as nonTrivial pattren (without INotfyChange)
+   whereas, delete data will use Trivial mode (INotifyChange) in View section to be much more practical for
+   operation that drived form ModelView part in MVVM.
